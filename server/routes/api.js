@@ -7,7 +7,7 @@ router.get("/allJobs", (request, response) => {
     response.send(dataBase);
   });
 });
-router.get("/avaliavbleJobs", (request, response) => {
+router.get("/search", (request, response) => {
   const requestObject = {
     city: request.body.city,
     jobType: request.body.jobType,
@@ -22,5 +22,11 @@ router.get("/avaliavbleJobs", (request, response) => {
     response.send(filterdJobs);
   });
 });
-
+router.get("/init", function (request, response) {
+  Jobs.find({}, { city: 1, experinceYears: 1, jobType: 1, _id: 0 }).exec(
+    function (error, data) {
+      response.send(data);
+    }
+  );
+});
 module.exports = router;

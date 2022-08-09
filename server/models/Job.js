@@ -24,8 +24,7 @@ let newItem = new Job({
   postDate: new Date(),
   experince: "Jonior",
   eductionLevel: "Bachelor",
-  picture:
-    "https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/udHvbKwV-IMG-Dubai-UAE-1-1200x900.jpg",
+  picture: "https://logo.clearbit.com/spotify.com",
 });
 
 let newItem1 = new Job({
@@ -37,8 +36,9 @@ let newItem1 = new Job({
   postDate: new Date(),
   experince: "Senior",
   eductionLevel: "Bachelor",
+  picture: "https://logo.clearbit.com/intel.com",
 });
-// newItem.save();
-// newItem1.save();
+//newItem.save();
+//newItem1.save();
 
 module.exports = Job;
