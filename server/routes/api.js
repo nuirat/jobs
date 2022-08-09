@@ -1,9 +1,11 @@
 const express = require('express')
+const { type } = require('jquery')
 const router = express.Router()
-const Item = require('../models/Item')
+const Job = require('../models/Job')
 
 
-router.get('/city/:city', (req, res) => {
+router.get('/getCpmpanies', (req, res) => {
+  
 })
 
 router.get('/get', (req, res) => {
@@ -18,5 +20,4 @@ router.post('/save', (req, res) => {
     let newItem = new Item(data)
     newItem.save()
 })
-
 module.exports = router
