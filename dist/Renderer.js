@@ -1,8 +1,14 @@
 class Renderer {
-    renderData (data) {
-        let source = $("#data-template").html(); 
-        let template = Handlebars.compile(source)
-        let html = template({results: results})
-        $(".results").empty().append(html)
-    }
+  constructor(jobTemplate, jobContainer) {
+    this.jobTemplate = jobTemplate;
+    this.jobContainer = jobContainer;
+  }
+
+  renderData = (jobData) => {
+    this.jobContainer.empty();
+    let source = this.jobTemplate.html();
+    let template = Handlebars.compile(source);
+    let html = template({ jobData });
+    this.jobContainer.append(html);
+  };
 }
