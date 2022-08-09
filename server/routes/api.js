@@ -1,23 +1,20 @@
-const express = require('express')
-const { type } = require('jquery')
-const router = express.Router()
-const Job = require('../models/Job')
+const express = require("express");
+const router = express.Router();
+const Jobs = require("../models/Job");
 
-
-router.get('/getCpmpanies', (req, res) => {
-  
-})
-
-router.get('/get', (req, res) => {
-    Item.find({}, function(err, data) {
-        console.log(data)
-        res.send(data)
-    })
+router.get("/avaliavbleJobs", (request, response) => {
+  const requestObject = {
+    city: request.body.city,
+    jobType: request.body.jobType,
+    experinceYears: request.body.experinceYears,
+  };
+  Jobs.find({
+    city: requestObject.city,
+    jobType: requestObject.jobType,
+    experinceYears: requestObject.experinceYears,
+  }).exec(function (error, filterdJobs) {
+    response.send(filterdJobs);
+  });
 });
 
-router.post('/save', (req, res) => {
-    let data = req.body
-    let newItem = new Item(data)
-    newItem.save()
-})
-module.exports = router
+module.exports = router;
