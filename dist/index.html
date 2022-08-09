@@ -19,6 +19,7 @@
   </head>
 
   <body>
+   
     <div class="navbar">
       <div class="dropdown">
         <button class="dropbtn">
@@ -26,7 +27,8 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          
+          {{#each jobData}}
+          {{city}}
         </div>
       </div>
 
@@ -36,7 +38,7 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-          
+          {{#each type}}
         </div>
       </div>
 
@@ -46,10 +48,11 @@
           <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-         
+          {{#each jobData}}
         </div>
       </div>
     </div>
+
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
@@ -66,6 +69,7 @@
         </div>
       {{/each}}
     </script>
+     
 
     <div class="job-container"></div>
     <script src="./jquery/dist/jquery.js"></script>

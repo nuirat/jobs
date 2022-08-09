@@ -7,4 +7,5 @@ function getData() {
 }
 $(window).on("load", function () {
   getData();
+  dataModel.getCitys()
 });
