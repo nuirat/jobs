@@ -1,5 +1,10 @@
-const renderer = new Renderer($(".job-container"), $("#job-template"));
+const renderer = new Renderer();
 const dataModel = new DataModel();
 function getData() {
-  renderer.renderData(dataModel.jobData);
+  dataModel.getJobs().then((result) => {
+    renderer.renderData(result);
+  });
 }
+$(window).on("load", function () {
+  getData();
+});

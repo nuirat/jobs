@@ -1,10 +1,13 @@
 class DataModel {
   constructor() {
     this.jobData = [];
-
-    $.get("/allJobs", function (jobData) {
-      console.log(jobData);
-      this.jobData = jobData;
+  }
+  async getJobs() {
+    let result = await $.ajax({
+      method: "GET",
+      url: "/allJobs",
     });
+    this.jobData = result;
+    return this.jobData;
   }
 }

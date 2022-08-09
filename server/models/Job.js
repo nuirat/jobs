@@ -24,6 +24,8 @@ let newItem = new Job({
   postDate: new Date(),
   experince: "Jonior",
   eductionLevel: "Bachelor",
+  picture:
+    "https://www.timeoutdubai.com/cloud/timeoutdubai/2021/09/11/udHvbKwV-IMG-Dubai-UAE-1-1200x900.jpg",
 });
 
 let newItem1 = new Job({

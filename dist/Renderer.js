@@ -1,7 +1,7 @@
 class Renderer {
-  constructor(jobTemplate, jobContainer) {
-    this.jobTemplate = jobTemplate;
-    this.jobContainer = jobContainer;
+  constructor() {
+    this.jobTemplate = $("#job-template");
+    this.jobContainer = $(".job-container");
   }
 
   renderData = (jobData) => {
