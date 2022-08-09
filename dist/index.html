@@ -18,26 +18,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   </head>
 
-  <body>
+  <body id="firstPage">
     <div class="navbar">
       <div class="dropdown">
         <button class="dropbtn">
           City
-          <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
-          
-        </div>
+        <select class="dropdown-City">
+        </select>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn">
           Type of the job
-          <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
+        <select class="dropdown-Job">
           
-        </div>
+        </select>
       </div>
 
       <div class="dropdown">
@@ -45,24 +42,36 @@
           Experiance years
           <i class="fa fa-caret-down"></i>
         </button>
-        <div class="dropdown-content">
+        <select class="dropdown-Years">
          
-        </div>
+        </select>
       </div>
     </div>
+    <script id="Nav-template" type="text/x-handlebars-template">
+        {{#each city}}
+        <option >{{this}}</option>
+        {{/each}}
+        {{#each job}}
+        <option >{{this}}</option>
+        {{/each}}
+        {{#each year}}
+        <option >{{this}}</option>
+        {{/each}}
+    </script>
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
           <p>{{city}}</p>
           <p>{{jobType}}</p>
           <p>{{experinceYears}}</p>
-          <img src={{picture}} alt="" />
+          <img src={{picture}} />
           <p>{{jobDescription}}</p>
           <p>{{expiredDate}}</p>
           <p>{{postDate}}</p>
           <p>{{experince}}</p>
-          <p>{{educationLevel}}</p>
+          
           <p>{{jobTasks}}</p>
+          <a href="showDetails.html" data-educationLevel={{educationLevel}} data-city="{{city}}" data-jobType="{{jobType}}" onclick=secondPage(this)>See More</a>
         </div>
       {{/each}}
     </script>
