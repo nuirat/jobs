@@ -1,43 +1,83 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>WhetherWeather</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
-        crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
 
-</head>
+  <body>
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn">
+          City
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
 
-<body>
-<script id="job-template" type="text/x-handlebars-template">
-{{#each jobData}}
-<div class="jobs">
-    <p>{{city}}</p>
-    <p>{{jobType}}</p>
-    <p>{{experinceYears}}</p>
-    <img src={{picture}} alt="">
-    <p>{{jobDescription}}</p>
-    <p>{{expiredDate}}</p>
-    <p>{{postDate}}</p>
-    <p>{{experince}}</p>
-    <p>{{educationLevel}}</p>
-    <p>{{jobTasks}}</p>
-</div>
-{{/each}}
-</script>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Type of the job
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
 
-<div class="job-container"></div>
+      <div class="dropdown">
+        <button class="dropbtn">
+          Type of the job
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
+    <script id="job-template" type="text/x-handlebars-template">
+      {{#each jobData}}
+        <div class="jobs">
+          <p>{{city}}</p>
+          <p>{{jobType}}</p>
+          <p>{{experinceYears}}</p>
+          <img src={{picture}} alt="" />
+          <p>{{jobDescription}}</p>
+          <p>{{expiredDate}}</p>
+          <p>{{postDate}}</p>
+          <p>{{experince}}</p>
+          <p>{{educationLevel}}</p>
+          <p>{{jobTasks}}</p>
+        </div>
+      {{/each}}
+    </script>
+
+    <div class="job-container"></div>
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="DataModel.js"></script>
     <script src="Renderer.js"></script>
     <script src="main.js"></script>
-</body>
-
-
+  </body>
 </html>
