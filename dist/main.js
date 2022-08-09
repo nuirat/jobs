@@ -14,8 +14,8 @@ function getNavs() {
 $(window).on("load", function () {
   getData();
   getNavs();
-  renderStroage();
+  renderer.renderStroage();
 });
 function secondPage(ancerElement) {
-  localStorage["viewElement"] = `${$(ancerElement).data("city")}`;
+  localStorage["city"] = `${$(ancerElement).data("city")}`;
 }

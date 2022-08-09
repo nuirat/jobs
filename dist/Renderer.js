@@ -29,6 +29,6 @@ class Renderer {
     this.CityContainer.append(html);
   };
   renderStroage() {
-    $("#image").attr("src")=localStorage["imageSrc"]
+    $("#image").attr("src", localStorage["city"]);
   }
 }
