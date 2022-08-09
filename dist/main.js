@@ -1,2 +1,2 @@
-const dataModel = new DataModel()
-const renderer = new Renderer()
+const renderer = new Renderer($(".job-container"), $("#job-template"));
+const dataModel = new DataModel();
