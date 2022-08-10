@@ -1,9 +1,7 @@
 class DataModel {
   constructor() {
     this.jobData = [];
-    this.city=[] ;
-    this.years=[];
-    this.type=[] ;
+    this.NavData = [];
   }
   async getJobs() {
     let result = await $.ajax({
@@ -11,18 +9,15 @@ class DataModel {
       url: "/allJobs",
     });
     this.jobData = result;
+    console.log(this.jobData);
     return this.jobData;
   }
-
-  async getCitys() {
+  async initNavs() {
     let result = await $.ajax({
       method: "GET",
       url: "/init",
     });
-  this.city=result.map(job =>job.city)
-  this.type=result.map(job=>job.jobType)
-  this.years=result.map(job=>job.experinceYears)
+    this.NavData = result;
+    return this.NavData;
   }
-
- 
 }

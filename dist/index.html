@@ -18,28 +18,41 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   </head>
 
+<<<<<<< HEAD
   <body>
    
+=======
+  <body id="firstPage"> 
+>>>>>>> fd96d90346c2415eb29e73a5e8b19e8e4ce3fa8a
     <div class="navbar">
       <div class="dropdown">
         <button class="dropbtn">
           City
-          <i class="fa fa-caret-down"></i>
         </button>
+<<<<<<< HEAD
         <div class="dropdown-content">
           {{#each jobData}}
           {{city}}
         </div>
+=======
+        <select class="dropdown-City">
+        </select>
+>>>>>>> fd96d90346c2415eb29e73a5e8b19e8e4ce3fa8a
       </div>
 
       <div class="dropdown">
         <button class="dropbtn">
           Type of the job
-          <i class="fa fa-caret-down"></i>
         </button>
+<<<<<<< HEAD
         <div class="dropdown-content">
           {{#each type}}
         </div>
+=======
+        <select class="dropdown-Job">
+          
+        </select>
+>>>>>>> fd96d90346c2415eb29e73a5e8b19e8e4ce3fa8a
       </div>
 
       <div class="dropdown">
@@ -47,25 +60,57 @@
           Experiance years
           <i class="fa fa-caret-down"></i>
         </button>
+<<<<<<< HEAD
         <div class="dropdown-content">
           {{#each jobData}}
         </div>
       </div>
     </div>
 
+=======
+        <select class="dropdown-Years">
+         
+        </select>
+      </div>
+    </div>
+    <script id="Nav-template" type="text/x-handlebars-template">
+        {{#each city}}
+        <option >{{this}}</option>
+        {{/each}}
+        {{#each job}}
+        <option >{{this}}</option>
+        {{/each}}
+        {{#each year}}
+        <option >{{this}}</option>
+        {{/each}}
+    </script>
+>>>>>>> fd96d90346c2415eb29e73a5e8b19e8e4ce3fa8a
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
           <p>{{city}}</p>
           <p>{{jobType}}</p>
           <p>{{experinceYears}}</p>
-          <img src={{picture}} alt="" />
+          <img src={{picture}} />
           <p>{{jobDescription}}</p>
           <p>{{expiredDate}}</p>
           <p>{{postDate}}</p>
           <p>{{experince}}</p>
-          <p>{{educationLevel}}</p>
+          <p>{{eductionLevel}}</p>
           <p>{{jobTasks}}</p>
+
+          <a href=showDetails.html onclick="secondPage(this)" 
+          data-educationLevel={{eductionLevel}} 
+          data-city={{city}}
+          data-jobType={{jobType}}
+          data-experinceYears={{experinceYears}}
+          data-picture={{picture}}
+          data-jobDescription="{{jobDescription}}"
+          data-expiredDate={{expiredDate}}
+          data-postDate={{postDate}}
+          data-experince={{experince}}
+          data-jobTasks="{{jobTasks}}"
+          >See More</a>
         </div>
       {{/each}}
     </script>
