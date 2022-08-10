@@ -6,16 +6,33 @@ function getData() {
     renderer.renderData(result);
   });
 }
-function getNavs() {
+
+function getCities() {
   dataModel.initNavs().then((result) => {
-    renderer.renderNavs(result);
+    renderer.renderCities(result);
   });
 }
+
+function getjobs() {
+  dataModel.initNavs().then((result) => {
+    renderer.renderjobs(result);
+  });
+}
+
+function getYears() {
+  dataModel.initNavs().then((result) => {
+    renderer.renderYears(result);
+  });
+}
+
 $(window).on("load", function () {
   getData();
-  getNavs();
+  getCities();
+  getjobs();
+  getYears();
   renderer.renderStroage();
 });
+
 function secondPage(ancerElement) {
   localStorage["city"] = `${$(ancerElement).data("city")}`;
   localStorage["jobType"] = `${$(ancerElement).data("jobType")}`;

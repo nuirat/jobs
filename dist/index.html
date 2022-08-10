@@ -18,8 +18,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   </head>
 
-  <body id="firstPage"> 
+  <body> 
     <div class="navbar">
+
       <div class="dropdown">
         <button class="dropbtn">
           City
@@ -33,31 +34,37 @@
           Type of the job
         </button>
         <select class="dropdown-Job">
-          
         </select>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn">
           Experiance years
-          <i class="fa fa-caret-down"></i>
         </button>
         <select class="dropdown-Years">
-         
         </select>
       </div>
+
     </div>
-    <script id="Nav-template" type="text/x-handlebars-template">
+
+    <script id="city-template" type="text/x-handlebars-template">
         {{#each city}}
-        <option >{{this}}</option>
-        {{/each}}
-        {{#each job}}
-        <option >{{this}}</option>
-        {{/each}}
-        {{#each year}}
-        <option >{{this}}</option>
+        <option>{{this}}</option>
         {{/each}}
     </script>
+
+    <script id="jobType-template" type="text/x-handlebars-template">
+      {{#each job}}
+      <option >{{this}}</option>
+      {{/each}}
+  </script>
+
+  <script id="year-template" type="text/x-handlebars-template">
+    {{#each year}}
+    <option >{{this}}</option>
+    {{/each}}
+</script>
+
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
