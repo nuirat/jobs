@@ -12,6 +12,8 @@ const jobSchema = new Schema({
   experince: String,
   eductionLevel: String,
   jobTasks: String,
+  username: String,
+  password: String,
 });
 const Job = mongoose.model("Job", jobSchema);
 
@@ -26,6 +28,8 @@ let newItem = new Job({
   experince: "Jonior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/spotify.com",
+  username: "spotify",
+  password: "8",
 });
 
 let newItem1 = new Job({
@@ -39,6 +43,8 @@ let newItem1 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/nurse.com",
+  username: "nurse",
+  password: "7",
 });
 
 let newItem2 = new Job({
@@ -52,6 +58,8 @@ let newItem2 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/microsoft.com",
+  username: "microsoft",
+  password: "6",
 });
 
 let newItem3 = new Job({
@@ -65,6 +73,8 @@ let newItem3 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/Audacy.com",
+  username: "Audacy",
+  password: "5",
 });
 
 let newItem4 = new Job({
@@ -78,6 +88,8 @@ let newItem4 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/phone.com",
+  username: "phone",
+  password: "4",
 });
 
 let newItem5 = new Job({
@@ -91,6 +103,8 @@ let newItem5 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/intel.com",
+  username: "intel",
+  password: "3",
 });
 
 let newItem6 = new Job({
@@ -104,6 +118,8 @@ let newItem6 = new Job({
   experince: "Junior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/home.com",
+  username: "home",
+  password: "2",
 });
 
 let newItem7 = new Job({
@@ -117,7 +133,8 @@ let newItem7 = new Job({
   experince: "Jonior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/mobile.com",
-  jobTasks: ``,
+  username: "mobile",
+  password: "1",
 });
 //jobTasks:
 const allJobs = [

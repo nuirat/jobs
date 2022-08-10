@@ -86,4 +86,12 @@ router.get("/init", function (request, response) {
     }
   );
 });
+router.get("/signin", function (request, response) {
+  Jobs.find({
+    username: request.body.username,
+    password: request.body.password,
+  }).exec(function (error, company) {
+    response.send(company);
+  });
+});
 module.exports = router;
