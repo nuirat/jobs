@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1">
+		<title>Login</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+        <link href="log.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="login">
+			<h1>Login</h1>
+			<form  id="login">
+				<label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="userName" required>
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				<div>dont have account yet ? <a href="">Register now <i class="fas fa-light fa-user-plus"></i> </a></div>
+                <input type="button" value="Login" id="click" onclick="checkDataBase()">
+			</form>
+		</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="../DataModel.js"></script>
+    <script src="load.js"></script>
+	</body>
+</html>

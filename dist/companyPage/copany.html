@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>New company</h1>
+        <div id="companytamp"></div>
+
+    <script id="company-template" type="text/x-handlebars-template">
+        {{#each companyData}}
+          <div class="jobs">
+            <p>{{city}}</p>
+            <p>{{jobType}}</p>
+            <p>{{experinceYears}}</p>
+            <img src={{picture}} />
+            <p>{{jobDescription}}</p>
+            <p>{{expiredDate}}</p>
+            <p>{{postDate}}</p>
+            <p>{{experince}}</p>
+            <p>{{eductionLevel}}</p>
+            <p>{{jobTasks}}</p>
+          </div>
+        {{/each}}
+      </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="../DataModel.js"></script>
+    <script src="../Renderer.js"></script>
+    <script src="company.js"></script>
+</body>
+</html>

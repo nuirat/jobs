@@ -30,13 +30,7 @@ $(window).on("load", function () {
   getCities();
   getjobs();
   getYears();
-  renderer.renderStroage();
 });
-
-function secondPage(ancerElement) {
-  console.log($(ancerElement).data());
-  for (key in $(ancerElement).data()) {
-    localStorage[key] = $(ancerElement).data(`${key}`);
-    console.log(key);
-  }
+function secondPage(element) {
+  dataModel.sendViewData($(element).data("id"));
 }

@@ -2,7 +2,8 @@ const { request, response } = require("express");
 const express = require("express");
 const router = express.Router();
 const Jobs = require("../models/Job");
-
+let tempResponse = {};
+let openedCompany = {};
 router.get("/searchV2", function (request, response) {
   const City = request.body.city;
   const JobType = request.body.jobType;
@@ -86,4 +87,71 @@ router.get("/init", function (request, response) {
     }
   );
 });
+////////////
+router.get("/id/:id", function (request, response) {
+  Jobs.findById(request.params.id, function (error, docs) {
+    tempResponse = docs;
+  });
+  response.end();
+});
+router.get("/viewId", function (request, response) {
+  response.send(tempResponse);
+});
+//////////////////
+router.get("/signin/:username/:password", function (request, response) {
+  Jobs.find({
+    username: request.params.username,
+    password: request.params.password,
+  }).exec(function (error, company) {
+    openedCompany = company;
+    response.send(company);
+  });
+});
+router.get("/signinCompany", function (request, response) {
+  response.send(openedCompany);
+});
+/////////////
+// router.post("/signup", function (request, response) {
+//   request.body.username;
+//   request.body.password;
+//   newCompany = new Jobs({
+//     city: "",
+//     jobType: "",
+//     experinceYears: 0,
+//     jobDescription: "",
+//     expiredDate: new Date(),
+//     postDate: new Date(),
+//     experince: "",
+//     eductionLevel: "",
+//     picture: "",
+//     username: request.body.username,
+//     password: request.body.password,
+//   });
+// });
+// router.post("/addPost", function (request, response) {
+//   Jobs.find({
+//     username: request.body.username,
+//     password: request.body.password,
+//   }).exec(function (error, result) {
+//     if (!result.city) {
+//       result = {};
+//     } else {
+//       let newjob = new Job({
+//         city: "Jerusalem",
+//         jobType: "Manager",
+//         experinceYears: 0,
+//         jobDescription:
+//           "The main goal of this assignment is to develop a mobile application which will be utilized to communicate with women business owners in Palestine. Tasdeer will also provide the needed support to transform several training materials that are currently available in BWF into visual materials (videos) that will be available for women through the application.",
+//         expiredDate: new Date(),
+//         postDate: new Date(),
+//         experince: "Sineor",
+//         eductionLevel: "Master",
+//         picture: "https://logo.clearbit.com/mobile.com",
+//         username: request.body.username,
+//         password: request.body.password,
+//       });
+//       newjob.save();
+//     }
+//   });
+// });
 module.exports = router;

@@ -44,7 +44,7 @@
         <select class="dropdown-Years">
         </select>
       </div>
-
+        <a href="logPage/log.html" style="margin-left:93%;" onclick="logPage(this)">log or signup</a>
     </div>
 
     <script id="city-template" type="text/x-handlebars-template">
@@ -68,28 +68,11 @@
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
-          <p>{{city}}</p>
           <p>{{jobType}}</p>
-          <p>{{experinceYears}}</p>
-          <img src={{picture}} />
-          <p>{{jobDescription}}</p>
+          <img src={{picture}}/>
           <p>{{expiredDate}}</p>
-          <p>{{postDate}}</p>
-          <p>{{experince}}</p>
-          <p>{{eductionLevel}}</p>
-          <p>{{jobTasks}}</p>
-
-          <a href=showDetails.html onclick="secondPage(this)" 
-          data-educationLevel={{eductionLevel}} 
-          data-city={{city}}
-          data-jobType={{jobType}}
-          data-experinceYears={{experinceYears}}
-          data-picture={{picture}}
-          data-jobDescription="{{jobDescription}}"
-          data-expiredDate={{expiredDate}}
-          data-postDate={{postDate}}
-          data-experince={{experince}}
-          data-jobTasks="{{jobTasks}}"
+          <p>{{postDate}}</p>>
+          <a href=/viewNormal/showDetails.html data-id="{{_id}}" onclick="secondPage(this)" 
           >See More</a>
         </div>
       {{/each}}
