@@ -79,18 +79,18 @@
           <p>{{eductionLevel}}</p>
           <p>{{jobTasks}}</p>
 
-          <a href="showDetails.html"
-          data-educationLevel={{educationLevel}} 
+          <a href=showDetails.html onclick="secondPage(this)" 
+          data-educationLevel={{eductionLevel}} 
           data-city={{city}}
-          data-jobType="{{jobType}}"
-          data-experinceYears="{{experinceYears}}"
-          data-picture="{{picture}}"
+          data-jobType={{jobType}}
+          data-experinceYears={{experinceYears}}
+          data-picture={{picture}}
           data-jobDescription="{{jobDescription}}"
-          data-expiredDate="{{expiredDate}}"
-          data-postDate="{{postDate}}"
-          data-experince="experince"
+          data-expiredDate={{expiredDate}}
+          data-postDate={{postDate}}
+          data-experince={{experince}}
           data-jobTasks="{{jobTasks}}"
-          onclick=secondPage(this)>See More</a>
+          >See More</a>
         </div>
       {{/each}}
     </script>
