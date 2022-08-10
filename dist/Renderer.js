@@ -29,6 +29,15 @@ class Renderer {
     this.CityContainer.append(html);
   };
   renderStroage() {
-    $("#image").attr("src", localStorage["city"]);
+    $("#city").text(localStorage["city"]);
+    $("#jobType").attr("src", localStorage["jobType"]);
+    $("#experinceYears").attr("src", localStorage["experinceYears"]);
+    $("#picture").attr("src", localStorage["picture"]);
+    $("#jobDescription").attr("src", localStorage["jobDescription"]);
+    $("#expiredDate").attr("src", localStorage["expiredDate"]);
+    $("#postDate").attr("src", localStorage["postDate"]);
+    $("#experince").attr("src", localStorage["experince"]);
+    $("#eductionLevel").attr("src", localStorage["eductionLevel"]);
+    $("#jobTasks").attr("src", localStorage["jobTasks"]);
   }
 }

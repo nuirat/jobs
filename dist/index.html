@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   </head>
 
-  <body id="firstPage">
+  <body id="firstPage"> 
     <div class="navbar">
       <div class="dropdown">
         <button class="dropbtn">
@@ -69,9 +69,21 @@
           <p>{{expiredDate}}</p>
           <p>{{postDate}}</p>
           <p>{{experince}}</p>
-          
+          <p>{{eductionLevel}}</p>
           <p>{{jobTasks}}</p>
-          <a href="showDetails.html" data-educationLevel={{educationLevel}} data-city="{{city}}" data-jobType="{{jobType}}" onclick=secondPage(this)>See More</a>
+
+          <a href="showDetails.html"
+          data-educationLevel={{educationLevel}} 
+          data-city={{city}}
+          data-jobType="{{jobType}}"
+          data-experinceYears="{{experinceYears}}"
+          data-picture="{{picture}}"
+          data-jobDescription="{{jobDescription}}"
+          data-expiredDate="{{expiredDate}}"
+          data-postDate="{{postDate}}"
+          data-experince="experince"
+          data-jobTasks="{{jobTasks}}"
+          onclick=secondPage(this)>See More</a>
         </div>
       {{/each}}
     </script>
