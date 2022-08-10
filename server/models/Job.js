@@ -163,7 +163,7 @@ const allJobs = [
   newItem8,
 ];
 
-allJobs.forEach((e) => e.save());
+//allJobs.forEach((e) => e.save());
 //newItem.save();
 //newItem1.save();
 

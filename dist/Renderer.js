@@ -53,16 +53,17 @@ class Renderer {
     this.yearContainer.append(html);
   };
 
-  renderStroage() {
-    $("#city").text(localStorage["city"]);
-    $("#jobType").text(localStorage["jobtype"]);
-    $("#experinceYears").text(localStorage["experinceyears"]);
-    $("#picture").attr("src", localStorage["picture"]);
-    $("#jobDescription").text(localStorage["jobdescription"]);
-    $("#expiredDate").text(localStorage["expireddate"]);
-    $("#postDate").text(localStorage["postdate"]);
-    $("#experince").text(localStorage["experince"]);
-    $("#eductionLevel").text(localStorage["educationlevel"]);
-    $("#jobTasks").text(localStorage["jobtasks"]);
+  rendermainView(result) {
+    let source = $("#view-template").html();
+    let template = Handlebars.compile(source);
+    let html = template(result);
+    $("#view-handle").append(html);
+  }
+  renderCompany(companyData) {
+    console.log(companyData);
+    let source = $("#company-template").html();
+    let template = Handlebars.compile(source);
+    let html = template({ companyData });
+    $("#companytamp").append(html);
   }
 }

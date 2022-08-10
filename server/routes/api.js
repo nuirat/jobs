@@ -2,7 +2,8 @@ const { request, response } = require("express");
 const express = require("express");
 const router = express.Router();
 const Jobs = require("../models/Job");
-
+let tempResponse = {};
+let openedCompany = {};
 router.get("/searchV2", function (request, response) {
   const City = request.body.city;
   const JobType = request.body.jobType;
@@ -86,16 +87,29 @@ router.get("/init", function (request, response) {
     }
   );
 });
+////////////
+router.get("/id/:id", function (request, response) {
+  Jobs.findById(request.params.id, function (error, docs) {
+    tempResponse = docs;
+  });
+  response.end();
+});
+router.get("/viewId", function (request, response) {
+  response.send(tempResponse);
+});
 //////////////////
-router.get("/signin", function (request, response) {
+router.get("/signin/:username/:password", function (request, response) {
   Jobs.find({
-    username: request.body.username,
-    password: request.body.password,
+    username: request.params.username,
+    password: request.params.password,
   }).exec(function (error, company) {
+    openedCompany = company;
     response.send(company);
   });
 });
-
+router.get("/signinCompany", function (request, response) {
+  response.send(openedCompany);
+});
 /////////////
 // router.post("/signup", function (request, response) {
 //   request.body.username;
@@ -140,4 +154,4 @@ router.get("/signin", function (request, response) {
 //     }
 //   });
 // });
-// module.exports = router;
+module.exports = router;

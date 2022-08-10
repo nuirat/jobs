@@ -62,3 +62,16 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.job-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 100px;
+}
+.job-container *{
+  display: inline;
+  margin: 10px;
+}
+.jobs{
+  padding: 10px;
+  border-bottom: 3px solid gray;
+}
