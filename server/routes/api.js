@@ -2,62 +2,77 @@ const { request, response } = require("express");
 const express = require("express");
 const router = express.Router();
 const Jobs = require("../models/Job");
+const bodyParser = require("body-parser");
+router.use(bodyParser.urlencoded({ extended: false }));
+router.use(bodyParser.json());
 let tempResponse = {};
 let openedCompany = {};
-router.get("/searchV2", function (request, response) {
-  const City = request.body.city;
-  const JobType = request.body.jobType;
-  const ExperinceYears = request.body.experinceYears;
-
-  if (City && JobType && ExperinceYears) {
-    Jobs.find({
-      city: City,
-      jobType: JobType,
-      experinceYears: ExperinceYears,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (City && JobType) {
-    Jobs.find({
-      city: City,
-      jobType: JobType,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (City && ExperinceYears) {
-    Jobs.find({
-      city: City,
-      experinceYears: ExperinceYears,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (JobType && ExperinceYears) {
-    Jobs.find({
-      jobType: JobType,
-      experinceYears: ExperinceYears,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (City) {
-    Jobs.find({
-      city: City,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (JobType) {
-    Jobs.find({
-      jobType: JobType,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  } else if (ExperinceYears) {
-    Jobs.find({
-      experinceYears: ExperinceYears,
-    }).exec(function (error, filterdJobs) {
-      response.send(filterdJobs);
-    });
-  }
+router.get("/filter/:city/:job/:year", function (request, response) {
+  const City = request.params.city;
+  const JobType = request.params.job;
+  const ExperinceYears = parseInt(request.params.year);
+  Jobs.find({
+    city: City,
+    jobType: JobType,
+  }).exec(function (error, result) {
+    console.log(result);
+    response.send(result);
+  });
 });
+// router.get("/searchV2", function (request, response) {
+//   const City = request.body.city;
+//   const JobType = request.body.job;
+//   const ExperinceYears = request.body.year;
+//   console.log(City, JobType, ExperinceYears);
+//   if (City && JobType && ExperinceYears) {
+//     Jobs.find({
+//       city: City,
+//       jobType: JobType,
+//       experinceYears: ExperinceYears,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (City && JobType) {
+//     Jobs.find({
+//       city: City,
+//       jobType: JobType,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (City && ExperinceYears) {
+//     Jobs.find({
+//       city: City,
+//       experinceYears: ExperinceYears,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (JobType && ExperinceYears) {
+//     Jobs.find({
+//       jobType: JobType,
+//       experinceYears: ExperinceYears,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (City) {
+//     Jobs.find({
+//       city: City,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (JobType) {
+//     Jobs.find({
+//       jobType: JobType,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   } else if (ExperinceYears) {
+//     Jobs.find({
+//       experinceYears: ExperinceYears,
+//     }).exec(function (error, filterdJobs) {
+//       response.send(filterdJobs);
+//     });
+//   }
+// });
 
 /////
 router.get("/allJobs", (request, response) => {
@@ -110,24 +125,42 @@ router.get("/signin/:username/:password", function (request, response) {
 router.get("/signinCompany", function (request, response) {
   response.send(openedCompany);
 });
-/////////////
-// router.post("/signup", function (request, response) {
-//   request.body.username;
-//   request.body.password;
-//   newCompany = new Jobs({
-//     city: "",
-//     jobType: "",
-//     experinceYears: 0,
-//     jobDescription: "",
-//     expiredDate: new Date(),
-//     postDate: new Date(),
-//     experince: "",
-//     eductionLevel: "",
-//     picture: "",
-//     username: request.body.username,
-//     password: request.body.password,
-//   });
-// });
+router.post("/addJob", function (request, response) {
+  let jobOffer = new Jobs({
+    city: request.body.city,
+    jobType: request.body.jobType,
+    experinceYears: request.body.experinceYears,
+    picture: request.body.picture,
+    jobDescription: request.body.jobDescription,
+    expiredDate: request.body.expiredDate,
+    postDate: request.body.postDate,
+    experince: request.body.experince,
+    eductionLevel: request.body.eductionLevel,
+    jobTasks: request.body.jobTasks,
+    username: request.body.username,
+    password: request.body.password,
+  });
+  jobOffer.save();
+  response.send(jobOffer);
+});
+
+router.post("/signup", function (request, response) {
+  newCompany = new Jobs({
+    city: request.body.city,
+    jobType: request.body.jobType,
+    experinceYears: request.body.experinceYears,
+    jobDescription: request.body.jobDescription,
+    expiredDate: request.body.expiredDate,
+    postDate: request.body.postDate,
+    experince: request.body.experince,
+    eductionLevel: request.body.eductionLevel,
+    picture: request.body.picture,
+    username: request.body.username,
+    password: request.body.password,
+  });
+  newCompany.save();
+  response.send(newCompany);
+});
 // router.post("/addPost", function (request, response) {
 //   Jobs.find({
 //     username: request.body.username,

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="newb">
+        <div class="input-container1">
+          <label class="label2">Post Date</label>
+          <input type="date" placeholder="" id="postDate" />
+        </div>
+
+        <div class="input-container1">
+          <label class="label2">Expired Date</label>
+          <input type="date" placeholder="" id="expiredDate"/>
+        </div>
+
+        <div class="input-container">
+          <label><i class="fa-solid fa-briefcase"></i></label>
+          <input type="text" placeholder="Job Type" id="jobType"/>
+        </div>
+        <div class="input-container">
+          <label><i class="fa-solid fa-calendar-days"></i></label>
+          <input type="text" placeholder="Experince Years" id="experinceYears" />
+        </div>
+        <div class="input-container">
+          <label><i class="fa-solid fa-city"></i></label>
+
+          <input type="text" placeholder="City" id="city"/>
+        </div>
+        <div class="input-container">
+          <label><i class="fa-solid fa-address-card"></i></label>
+          <input type="text" placeholder="Experince" id="experince" />
+        </div>
+        <div class="input-container">
+          <label><i class="fa-regular fa-file-lines"></i></label>
+          <input type="text" placeholder="Job Description" id="jobDescription"/>
+        </div>
+        <div class="input-container">
+          <label><i class="fa-solid fa-user-graduate"></i></label>
+          <input type="text" placeholder="Eduction Level" id="eductionLevel" />
+        </div>
+        <div class="input-container">
+          <label><i class="fa-solid fa-user-graduate"></i></label>
+          <input type="text" placeholder="Job Tasks" id="jobTasks" />
+        </div>
+
+        <div class="options"></div>
+      </div>
+      <input type="submit" value=" add" id="submit" onclick="postData()" />
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../DataModel.js"></script>
+    <script src="addJob.js"></script>
+  </body>
+</html>

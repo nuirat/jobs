@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    crossorigin="anonymous"
+  ></script>
+</head>
+<body>
+    <div class="continer">
+
+        <form id="form1" >
+         <h3>Sign up</h3>
+         <input type="text" name="" id="username" required placeholder="ex ahmad_123">
+         <input type="password" name="" id="password" required placeholder="1234">
+         <div class="next">
+            <button  type="button" id="next1">Next</button>
+         </div>
+        </form>
+        <form id="form2" >
+            <h3>Add Post</h3>
+            <input type="text" name="" id="city"  placeholder="ex Jenin">
+            <input type="text" name="" id="jobType"  placeholder="job Type">
+            <input type="number" name="" id="experinceYears"  placeholder="experince Years">
+            <input type="text" name="" id="jobDescription"  placeholder="job Description">
+             
+            <div class="next">
+                <button id="back1" type="button">Back</button>
+               <button id="next2" type="button">Next</button>
+            </div>
+           </form>
+           <form id="form3" >
+            <h3>Add more Info</h3>
+            <input type="text" name="" id="jobTasks" placeholder="job Tasks"  >
+            <input type="date" name="" id="expiredDate"  placeholder="Expired Date">
+            <input type="date" name="" id="postDate"  placeholder="Post Date"> 
+            <div class="next">
+                <button id="back2" type="button">Back</button>
+               <button id="next3" type="button">Next</button>
+               
+            </div>
+           </form>
+
+           <form id="form4" >
+            <h3>Add Post</h3>
+            <input type="text" name="" id="experince"  placeholder="experince ex: Sinor">
+            <input type="text" name="" id="eductionLevel"  placeholder="Eduction Level ex: Master">
+            <div class="next">
+              <button id="back3" type="button">Back</button>
+               <button type="button" id="submit" onclick="addNewCompany()">Submit</button>
+              
+            </div>
+            
+           </form>
+          <div class="steps">
+            <div id="progress"></div>
+            <div class="stepcolumn">Step1</div>
+            <div class="stepcolumn">Step2</div>
+            <div class="stepcolumn">Step3</div>
+            <div class="stepcolumn">Step4</div>
+
+
+          </div> 
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../DataModel.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

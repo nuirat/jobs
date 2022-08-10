@@ -5,24 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="company.css">
 </head>
 <body>
-    <h1>New company</h1>
-        <div id="companytamp"></div>
+  <div id="companyLOG"></div>
+  <div><button id="addpost"> add a new job</button></div>
 
+        
+        <div id="companytamp"></div>
     <script id="company-template" type="text/x-handlebars-template">
         {{#each companyData}}
           <div class="jobs">
-            <p>{{city}}</p>
-            <p>{{jobType}}</p>
-            <p>{{experinceYears}}</p>
+            <h3><label>City: </label> {{city}}</h3>
+            <p><label>Job Type: </label>{{jobType}}</p>
+            <p><label>Experince Year:s</label>{{experinceYears}}</p>
             <img src={{picture}} />
-            <p>{{jobDescription}}</p>
-            <p>{{expiredDate}}</p>
-            <p>{{postDate}}</p>
-            <p>{{experince}}</p>
-            <p>{{eductionLevel}}</p>
-            <p>{{jobTasks}}</p>
+            <p><label>Job Description: </label>{{jobDescription}}</p>
+            <p><label>Expired Date: </label>{{expiredDate}}</p>
+            <p><label>Post Date: </label>{{postDate}}</p>
+            <p><label>Experince: </label>{{experince}}</p>
+            <p><label>Eduction Level: </label>{{eductionLevel}}</p>
+            <p><label>Job Tasks: </label>{{jobTasks}}</p>
           </div>
         {{/each}}
       </script>

@@ -9,7 +9,14 @@ class Renderer {
     this.yearContainer = $(".dropdown-Years");
     this.yearTemplate = $("#year-template");
   }
-
+  renderSearchFilter(jobData) {
+    this.jobContainer.empty();
+    console.log(jobData);
+    let source = this.jobTemplate.html();
+    let template = Handlebars.compile(source);
+    let html = template({ jobData });
+    this.jobContainer.append(html);
+  }
   renderData = (jobData) => {
     this.jobContainer.empty();
     let source = this.jobTemplate.html();
@@ -60,7 +67,8 @@ class Renderer {
     $("#view-handle").append(html);
   }
   renderCompany(companyData) {
-    console.log(companyData);
+    $("#companyLOG").append(`<img id ="cimg" src=${companyData[0].picture}>`);
+
     let source = $("#company-template").html();
     let template = Handlebars.compile(source);
     let html = template({ companyData });

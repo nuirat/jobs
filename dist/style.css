@@ -1,14 +1,30 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EAE3D2;
+  font-family: Roboto;
 }
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  text-align: right;
+  padding-right: 100px;
+  background-color: #1C3879;
+  margin-bottom: 60px;
+  word-spacing: 0px;
+  margin-bottom: 30px;
+  font-size: 40px;
+  height: 60px;
+}
+.dropdown-City{
+  width: 200px;
+}
+.dropdown-Years{
+  width: 200px;
+}
+.dropdown-Job{
+  width: 200px;
 }
 
 .navbar a {
-  float: left;
   font-size: 16px;
   color: white;
   text-align: center;
@@ -30,11 +46,6 @@ body {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-}
-
-.navbar a:hover,
-.dropdown:hover .dropbtn {
-  background-color: red;
 }
 
 .dropdown-content {
@@ -62,10 +73,10 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .job-container{
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 100px;
 }
 .job-container *{
   display: inline;
@@ -75,3 +86,10 @@ body {
   padding: 10px;
   border-bottom: 3px solid gray;
 }
+
+#login{
+  border: 2px solid;
+  text-emphasis-color: black;
+  font-size: 10px;
+}
+

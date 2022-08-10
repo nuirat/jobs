@@ -5,4 +5,7 @@ $(window).on("load", function () {
     console.log(result);
     render.renderCompany(result);
   });
+  $("#addpost").on("click", function () {
+    window.open("./adddata/index.html", "_blank");
+  });
 });

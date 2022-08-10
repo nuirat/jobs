@@ -1,0 +1,45 @@
+body{
+    background-color: #F9F5EB;
+}
+#companyLOG{
+    border: solid black 3px;
+    width: fit-content;
+    display: inline-block;
+}
+
+button{
+    width:200px;
+    height: 60px;
+    border-radius: 25px;
+    margin-left: 44%;
+    background-color: #8FE3CF;
+    font-size:x-large;
+    margin-top: 20px;
+    
+}
+
+button:hover {background-color: #b5e5d9}
+
+
+.jobs{
+    background-color: #002B5B;
+    color: #F9F5EB;
+    width:50% ;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin-left: 25%;
+    
+}
+#companyLOG{
+    margin-top: 20px;
+    margin-left: 46%;
+    border-radius: 50%;
+}
+#cimg{
+    border-radius: 50%;
+}
+label{
+    font-size: larger;
+}
