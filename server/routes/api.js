@@ -86,6 +86,7 @@ router.get("/init", function (request, response) {
     }
   );
 });
+//////////////////
 router.get("/signin", function (request, response) {
   Jobs.find({
     username: request.body.username,
@@ -94,4 +95,49 @@ router.get("/signin", function (request, response) {
     response.send(company);
   });
 });
-module.exports = router;
+
+/////////////
+// router.post("/signup", function (request, response) {
+//   request.body.username;
+//   request.body.password;
+//   newCompany = new Jobs({
+//     city: "",
+//     jobType: "",
+//     experinceYears: 0,
+//     jobDescription: "",
+//     expiredDate: new Date(),
+//     postDate: new Date(),
+//     experince: "",
+//     eductionLevel: "",
+//     picture: "",
+//     username: request.body.username,
+//     password: request.body.password,
+//   });
+// });
+// router.post("/addPost", function (request, response) {
+//   Jobs.find({
+//     username: request.body.username,
+//     password: request.body.password,
+//   }).exec(function (error, result) {
+//     if (!result.city) {
+//       result = {};
+//     } else {
+//       let newjob = new Job({
+//         city: "Jerusalem",
+//         jobType: "Manager",
+//         experinceYears: 0,
+//         jobDescription:
+//           "The main goal of this assignment is to develop a mobile application which will be utilized to communicate with women business owners in Palestine. Tasdeer will also provide the needed support to transform several training materials that are currently available in BWF into visual materials (videos) that will be available for women through the application.",
+//         expiredDate: new Date(),
+//         postDate: new Date(),
+//         experince: "Sineor",
+//         eductionLevel: "Master",
+//         picture: "https://logo.clearbit.com/mobile.com",
+//         username: request.body.username,
+//         password: request.body.password,
+//       });
+//       newjob.save();
+//     }
+//   });
+// });
+// module.exports = router;

@@ -136,6 +136,20 @@ let newItem7 = new Job({
   username: "mobile",
   password: "1",
 });
+let newItem8 = new Job({
+  city: "Jerusalem",
+  jobType: "Manager",
+  experinceYears: 0,
+  jobDescription:
+    "The main goal of this assignment is to develop a mobile application which will be utilized to communicate with women business owners in Palestine. Tasdeer will also provide the needed support to transform several training materials that are currently available in BWF into visual materials (videos) that will be available for women through the application.",
+  expiredDate: new Date(),
+  postDate: new Date(),
+  experince: "Sineor",
+  eductionLevel: "Master",
+  picture: "https://logo.clearbit.com/mobile.com",
+  username: "mobile",
+  password: "1",
+});
 //jobTasks:
 const allJobs = [
   newItem,
@@ -146,9 +160,10 @@ const allJobs = [
   newItem5,
   newItem6,
   newItem7,
+  newItem8,
 ];
 
-//allJobs.forEach((e) => e.save());
+allJobs.forEach((e) => e.save());
 //newItem.save();
 //newItem1.save();
 
