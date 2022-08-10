@@ -30,14 +30,14 @@ class Renderer {
   };
   renderStroage() {
     $("#city").text(localStorage["city"]);
-    $("#jobType").attr("src", localStorage["jobType"]);
-    $("#experinceYears").attr("src", localStorage["experinceYears"]);
+    $("#jobType").text(localStorage["jobtype"]);
+    $("#experinceYears").text(localStorage["experinceyears"]);
     $("#picture").attr("src", localStorage["picture"]);
-    $("#jobDescription").attr("src", localStorage["jobDescription"]);
-    $("#expiredDate").attr("src", localStorage["expiredDate"]);
-    $("#postDate").attr("src", localStorage["postDate"]);
-    $("#experince").attr("src", localStorage["experince"]);
-    $("#eductionLevel").attr("src", localStorage["eductionLevel"]);
-    $("#jobTasks").attr("src", localStorage["jobTasks"]);
+    $("#jobDescription").text(localStorage["jobdescription"]);
+    $("#expiredDate").text(localStorage["expireddate"]);
+    $("#postDate").text(localStorage["postdate"]);
+    $("#experince").text(localStorage["experince"]);
+    $("#eductionLevel").text(localStorage["educationlevel"]);
+    $("#jobTasks").text(localStorage["jobtasks"]);
   }
 }

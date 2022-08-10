@@ -17,14 +17,9 @@ $(window).on("load", function () {
   renderer.renderStroage();
 });
 function secondPage(ancerElement) {
-  localStorage["city"] = `${$(ancerElement).data("city")}`;
-  localStorage["jobType"] = `${$(ancerElement).data("jobType")}`;
-  localStorage["experinceYears"] = `${$(ancerElement).data("experinceYears")}`;
-  localStorage["picture"] = `${$(ancerElement).data("picture")}`;
-  localStorage["jobDescription"] = `${$(ancerElement).data("jobDescription")}`;
-  localStorage["expiredDate"] = `${$(ancerElement).data("expiredDate")}`;
-  localStorage["postDate"] = `${$(ancerElement).data("postDate")}`;
-  localStorage["experince"] = `${$(ancerElement).data("experince")}`;
-  localStorage["eductionLevel"] = `${$(ancerElement).data("eductionLevel")}`;
-  localStorage["jobTasks"] = `${$(ancerElement).data("jobTasks")}`;
+  console.log($(ancerElement).data());
+  for (key in $(ancerElement).data()) {
+    localStorage[key] = $(ancerElement).data(`${key}`);
+    console.log(key);
+  }
 }

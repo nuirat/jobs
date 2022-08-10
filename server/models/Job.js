@@ -117,8 +117,9 @@ let newItem7 = new Job({
   experince: "Jonior",
   eductionLevel: "Bachelor",
   picture: "https://logo.clearbit.com/mobile.com",
+  jobTasks: ``,
 });
-
+//jobTasks:
 const allJobs = [
   newItem,
   newItem1,
@@ -130,7 +131,7 @@ const allJobs = [
   newItem7,
 ];
 
-allJobs.forEach((e) => e.save());
+//allJobs.forEach((e) => e.save());
 //newItem.save();
 //newItem1.save();
 
