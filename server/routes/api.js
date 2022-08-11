@@ -18,62 +18,6 @@ router.get("/filter/:city/:job/:year", function (request, response) {
     response.send(result);
   });
 });
-// router.get("/searchV2", function (request, response) {
-//   const City = request.body.city;
-//   const JobType = request.body.job;
-//   const ExperinceYears = request.body.year;
-//   console.log(City, JobType, ExperinceYears);
-//   if (City && JobType && ExperinceYears) {
-//     Jobs.find({
-//       city: City,
-//       jobType: JobType,
-//       experinceYears: ExperinceYears,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (City && JobType) {
-//     Jobs.find({
-//       city: City,
-//       jobType: JobType,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (City && ExperinceYears) {
-//     Jobs.find({
-//       city: City,
-//       experinceYears: ExperinceYears,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (JobType && ExperinceYears) {
-//     Jobs.find({
-//       jobType: JobType,
-//       experinceYears: ExperinceYears,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (City) {
-//     Jobs.find({
-//       city: City,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (JobType) {
-//     Jobs.find({
-//       jobType: JobType,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   } else if (ExperinceYears) {
-//     Jobs.find({
-//       experinceYears: ExperinceYears,
-//     }).exec(function (error, filterdJobs) {
-//       response.send(filterdJobs);
-//     });
-//   }
-// });
-
-/////
 router.get("/allJobs", (request, response) => {
   Jobs.find({}).exec(function (error, dataBase) {
     response.send(dataBase);
@@ -160,30 +104,5 @@ router.post("/signup", function (request, response) {
   newCompany.save();
   response.send(newCompany);
 });
-// router.post("/addPost", function (request, response) {
-//   Jobs.find({
-//     username: request.body.username,
-//     password: request.body.password,
-//   }).exec(function (error, result) {
-//     if (!result.city) {
-//       result = {};
-//     } else {
-//       let newjob = new Job({
-//         city: "Jerusalem",
-//         jobType: "Manager",
-//         experinceYears: 0,
-//         jobDescription:
-//           "The main goal of this assignment is to develop a mobile application which will be utilized to communicate with women business owners in Palestine. Tasdeer will also provide the needed support to transform several training materials that are currently available in BWF into visual materials (videos) that will be available for women through the application.",
-//         expiredDate: new Date(),
-//         postDate: new Date(),
-//         experince: "Sineor",
-//         eductionLevel: "Master",
-//         picture: "https://logo.clearbit.com/mobile.com",
-//         username: request.body.username,
-//         password: request.body.password,
-//       });
-//       newjob.save();
-//     }
-//   });
-// });
+
 module.exports = router;
