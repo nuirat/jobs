@@ -15,7 +15,6 @@ router.get("/filter/:city/:job/:year", function (request, response) {
     city: City,
     jobType: JobType,
   }).exec(function (error, result) {
-    console.log(result);
     response.send(result);
   });
 });

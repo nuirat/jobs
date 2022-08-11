@@ -11,7 +11,6 @@ class Renderer {
   }
   renderSearchFilter(jobData) {
     this.jobContainer.empty();
-    console.log(jobData);
     let source = this.jobTemplate.html();
     let template = Handlebars.compile(source);
     let html = template({ jobData });

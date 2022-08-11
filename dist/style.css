@@ -2,7 +2,12 @@ body {
   background-color: #EAE3D2;
   font-family: Roboto;
 }
-
+#Search{
+  padding: 5px;
+  font-size: medium;
+  background-color: lightblue;
+  border-radius: 10px;
+}
 .navbar {
   overflow: hidden;
   text-align: right;

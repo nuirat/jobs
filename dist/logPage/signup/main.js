@@ -68,7 +68,7 @@ function addNewCompany() {
     dataModel
       .addNewCompany(username, password, dataOBJ)
       .then(function (result) {
-        console.log(result);
+        window.open("../log.html", "_blank");
       });
   }
 }

@@ -39,7 +39,6 @@ function filterData() {
   const job = $(".dropdown-Job").find(":selected").text();
   const year = $(".dropdown-Years").find(":selected").text();
   dataModel.findTheSelectedData(city, job, year).then(function (result) {
-    console.log(result);
     renderer.renderSearchFilter(result);
   });
 }
