@@ -88,6 +88,9 @@ body {
   margin: 10px;
 }
 .jobs{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 10px;
   border-bottom: 3px solid gray;
 }
@@ -98,3 +101,35 @@ body {
   font-size: 10px;
 }
 
+#jImg{
+  margin-left:100px;
+}
+
+#jobT{
+  width:150px;
+}
+#seeMore{
+  width: 150px;
+  font-size: medium;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+a{
+  text-decoration:none;
+}
+
+.type{
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  width: 98%;
+  border:solid black 2px;
+  grid-template-columns: repeat(5,1fr);
+  font-size: larger;
+  height: 30px;
+  box-shadow: 3px 5px;
+  background-color: #ADD8E6;
+ padding: 10px;
+  
+
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>WhetherWeather</title>
+    <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat"
@@ -67,16 +67,24 @@
     <option >{{this}}</option>
     {{/each}}
 </script>
+<div>
+  <div class="type">
+    <div >Type of the job</div>
+    <div>Company</div>
+    <div>Post Date</div>
+    <div>Expired Date</div>
+  </div>
+</div>
 
     <script id="job-template" type="text/x-handlebars-template">
       {{#each jobData}}
         <div class="jobs">
-          <p>{{jobType}}</p>
-          <img src={{picture}}/>
-          <p>{{expiredDate}}</p>
-          <p>{{postDate}}</p>>
+          <div id="jobT">{{jobType}}</div>
+          <div  id="jImg"><img src={{picture}}/></div>
+          <div><p>{{expiredDate}}</p></div>
+          <div><p>{{postDate}}</p></div>
           <a href=/viewNormal/showDetails.html data-id="{{_id}}" onclick="secondPage(this)" 
-          >See More</a>
+          ><button id="seeMore">see more</button></a>
         </div>
       {{/each}}
     </script>
