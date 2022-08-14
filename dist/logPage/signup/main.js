@@ -45,7 +45,7 @@ function addNewCompany() {
   const username = $("#username").val();
   const password = $("#password").val();
   let dataOBJ = {
-    city: $("#password").val(),
+    city: $("#city").val(),
     jobType: $("#jobType").val(),
     experinceYears: $("#experinceYears").val(),
     picture: `https://logo.clearbit.com/${username}.com`,
